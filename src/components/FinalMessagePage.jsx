@@ -22,7 +22,7 @@ export default function FinalMessagePage({ onRestart }) {
         </div>
 
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-romantic-200 to-white text-center leading-tight drop-shadow-[0_4px_10px_rgba(255,255,255,0.2)]">
-          Princess unna kandippa nrg pannippa ok vah 💜
+          Princess unna kandippa mrg pannippa ok vah 💜
         </h2>
         
         {/* Decorative divider */}
