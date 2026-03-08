@@ -47,10 +47,33 @@ export default function LoveLetterPage({ onNext }) {
       exit={{ opacity: 0, x: -50 }}
       className="flex flex-col items-center justify-center p-6 md:p-12 w-full max-w-2xl bg-romantic-900/40 rounded-3xl backdrop-blur-md border border-romantic-600/30 shadow-[0_0_40px_rgba(147,51,234,0.15)] relative min-h-[400px]"
     >
+      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ y: 400, x: Math.random() * 600 - 300, opacity: 0 }}
+            animate={{ 
+              y: -100, 
+              opacity: [0, 1, 1, 0],
+              scale: [1, 1.5, 1]
+            }}
+            transition={{ 
+              duration: 5 + Math.random() * 5, 
+              repeat: Infinity, 
+              delay: Math.random() * 5 
+            }}
+            className="absolute bottom-0 left-1/2 text-romantic-400 opacity-20"
+            style={{ fontSize: `${Math.random() * 20 + 20}px` }}
+          >
+            💜
+          </motion.div>
+        ))}
+      </div>
+
       <div className="absolute top-4 left-4 text-romantic-500 opacity-30 text-4xl">"</div>
       <div className="absolute bottom-20 right-4 text-romantic-500 opacity-30 text-4xl">"</div>
 
-      <div className="w-full text-left font-serif text-lg md:text-2xl leading-relaxed text-romantic-100 whitespace-pre-wrap min-h-[300px]">
+      <div className="w-full text-left font-serif text-lg md:text-2xl leading-relaxed text-romantic-100 whitespace-pre-wrap min-h-[300px] relative z-10">
         {displayedText}
         {!isTypingComplete && (
           <motion.span
@@ -66,7 +89,7 @@ export default function LoveLetterPage({ onNext }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: isTypingComplete ? 1 : 0 }}
         transition={{ duration: 1 }}
-        className="mt-8"
+        className="mt-8 relative z-10"
       >
         <button
           onClick={onNext}

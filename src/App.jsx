@@ -30,19 +30,19 @@ function App() {
       {/* Background Hearts */}
       <div className="absolute inset-0 pointer-events-none flex flex-wrap gap-4 overflow-hidden opacity-20">
          {hearts.map((heart, i) => (
-           <div 
-             key={i} 
-             className="text-romantic-500 animate-float"
-             style={{
-               left: heart.left,
-               top: heart.top,
-               position: 'absolute',
-               animationDelay: heart.animationDelay,
-               fontSize: heart.fontSize
-             }}
-           >
-             ❤️
-           </div>
+            <div 
+              key={i} 
+              className="text-romantic-500 animate-float"
+              style={{
+                left: heart.left,
+                top: heart.top,
+                position: 'absolute',
+                animationDelay: heart.animationDelay,
+                fontSize: heart.fontSize
+              }}
+            >
+              💜
+            </div>
          ))}
       </div>
 
